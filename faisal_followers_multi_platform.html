@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>موقع فيصل لزيادة المتابعين</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #25d366;
+            color: white;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مرحباً بكم بموقع فيصل لزيادة المتابعين</h1>
+        <h2>اختر المنصة التي تريد زيادة المتابعين فيها</h2>
+        <select id="platform">
+            <option value="instagram">إنستقرام</option>
+            <option value="youtube">يوتيوب</option>
+            <option value="tiktok">تيك توك</option>
+            <option value="likee">لايكي</option>
+            <option value="facebook">فيسبوك</option>
+        </select>
+        <input type="text" placeholder="اسم المستخدم أو رابط الحساب" id="username">
+        <select id="followers">
+            <option value="100">100 متابع</option>
+            <option value="500">500 متابع</option>
+            <option value="1000">1000 متابع</option>
+            <option value="5000">5000 متابع</option>
+        </select>
+        <button onclick="startProcess()">ابدأ الآن</button>
+        <div id="loading" class="hidden">
+            <p>جارٍ المعالجة...</p>
+        </div>
+        <div id="success" class="hidden">
+            <h3>تم بنجاح!</h3>
+            <p>سيتم إضافة المتابعين خلال 24 ساعة.</p>
+        </div>
+    </div>
+
+    <script>
+        function startProcess() {
+            document.getElementById("loading").classList.remove("hidden");
+            setTimeout(() => {
+                document.getElementById("loading").classList.add("hidden");
+                document.getElementById("success").classList.remove("hidden");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
